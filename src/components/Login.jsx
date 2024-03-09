@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactPasswordMask from 'react-password-mask';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../utils/api';
 import NavBar from './NavBar';
@@ -9,8 +8,13 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false)
 
-const navigate = useNavigate()
+const navigate = useNavigate();
+
+const handleShowPassword = ()=>{
+  setShowPassword(!showPassword);
+}
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -79,15 +83,19 @@ const navigate = useNavigate()
               placeholder="ex.ramesh@ruby.com"
             />
           </div>
-          <div className="inp">
+          <div className="inp forPass" >
             <label>Password</label>
-            <ReactPasswordMask
+            <input
               id="password"
+              type={showPassword? "text":"password"}
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-            />
+              />
+              <span className='showPassword'
+              onClick={handleShowPassword}
+              >{showPassword ? 'Hide' : 'Show'}</span>
           </div>
           <div className="inp">
             <button className="btn-submit" type="submit">

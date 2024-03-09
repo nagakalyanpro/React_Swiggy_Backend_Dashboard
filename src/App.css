@@ -112,6 +112,18 @@
     
     .inp label {
         font-weight: 600;
+        position: relative;
+    }
+    
+    .forPass {
+        position: relative;
+    }
+    
+    .showPassword {
+        width: fit-content;
+        position: absolute;
+        top: 40px;
+        right: 10px;
     }
     
     .inp input {
