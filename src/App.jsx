@@ -28,16 +28,11 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Welcome />} />
-      {showAuth ? (
-        <>
-          <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<PageNotFound />} />
-        </>
-      ) : (
-        <Route path="/dashboard" element={<NavBar />} />
-      )}
-    </Routes>
+          <Route path="/dashboard" element={<NavBar />} />
+     </Routes>
   )
 }
 
