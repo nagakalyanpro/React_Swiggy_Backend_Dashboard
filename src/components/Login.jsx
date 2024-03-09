@@ -80,7 +80,7 @@ const handleShowPassword = ()=>{
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="ex.ramesh@ruby.com"
+              placeholder="example@ruby.com"
             />
           </div>
           <div className="inp forPass" >

@@ -74,7 +74,7 @@ const Register = () => {
               name="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Ramesh"
+              placeholder=""
             />
           </div>
           <div className="inp">

@@ -27,12 +27,18 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Welcome />} />
-      <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="/dashboard" element={<NavBar />} />
-     </Routes>
+      <Route path='/' element= {<Welcome />} />
+      {!showAuth && 
+      <Route path='/dashboard' element={<NavBar />} />
+    }
+      {showAuth && 
+     <>
+      <Route path='/login' element={<Login />} />
+      <Route path='/register' element= {<Register />} />
+      <Route path='*' element = {<PageNotFound />} />
+     </>
+    }
+    </Routes>
   )
 }
 
