@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PasswordMask from 'react-password-mask';
+import ReactPasswordMask from 'react-password-mask';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../utils/api';
 import NavBar from './NavBar';
@@ -81,7 +81,7 @@ const navigate = useNavigate()
           </div>
           <div className="inp">
             <label>Password</label>
-            <PasswordMask
+            <ReactPasswordMask
               id="password"
               name="password"
               value={password}
